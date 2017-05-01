@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>App Store</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--light box-->
+<script src="js/superfish.js"></script>
+<script type="text/javascript" src="js/jquery.lightbox.js"></script>
+<link rel="stylesheet" type="text/css" href="css/lightbox.css" media="screen">
+	<script type="text/javascript">
+	    $(function () {
+	        $('.gallery a').lightBox();
+	    });
+   </script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+   <script type="text/javascript">
+       jQuery(document).ready(function ($) {
+           $(".scroll").click(function (event) {
+               event.preventDefault();
+               $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+           });
+       });
+	</script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+  <div class="header">	
+    <div class="header-top">
+       <div class="wrap"> 
+	         <div class="logo">
+				<!--<a href="index.html"><img src="images/logo.png" alt=""/></a>-->
+				<h1><a href="index.html">App Store</a></h1>
+			 </div>
+			 <div class="cssmenu">
+				<ul>
+					 <li class="current"><a href="Default.aspx">Register</a></li>
+					 <li><a href="Default8.aspx">Login</a></li>
+					 <%--<li><a href="#section-3">Portfolio</a></li>
+					 <li><a href="#section-4">Services</a></li>--%>
+				     <%--<li><a href="#section-5">Contact</a></li>--%>
+				</ul>
+		    </div>
+		    <div class="clear"></div>
+	   </div>
+	 </div>
+   </div>
+   <div class="banner section" id="section-1">
+       <div class="wrap"> 		 
+           <div class="wmuSlider example1">
+			   <div class="wmuSliderWrapper">
+				   <article style="position: absolute; width: 100%; opacity: 0;"> <img src="images/header-banner.png" alt=""> </article>
+				   <article style="position: relative; width: 100%; opacity: 1;"> <img src="images/header-banner1.png" alt=""> </article>
+				   <%--<article style="position: absolute; width: 100%; opacity: 0;"> &nbsp;</article>--%>
+				</div>
+                <a class="wmuSliderPrev">Previous</a><a class="wmuSliderNext">Next</a>
+           </div>
+            	      <script src="js/jquery.wmuSlider.js"></script> 
+					  <script type="text/javascript" src="js/modernizr.custom.min.js"></script> 
+						<script>
+						    $('.example1').wmuSlider();
+   						</script> 	           	      
+        </div>
+    </div>
+	<div class="main" id="container">
+	   <div class="content-top section" id="section-2">
+           <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+		 </div>   
+	</div>
+    <div class="footer section" id="section-5">
+     <div class="footer-bottom">
+       <div class="wrap">
+        <div class="copy">
+		    <p class="copy">© 2013 Designed by  <a href="http://w3layouts.com" target="_blank">Vtech</a> </p>
+	    </div>
+	    <div class="social-footer">	
+			<ul>	
+		        <li class="facebook"><a href="#"><span> </span></a></li>
+			    <li class="google"><a href="#"><span> </span></a></li>
+			    <li class="twitter"><a href="#"><span> </span></a></li>
+			    <li class="rss"><a href="#"><span> </span></a></li>	        	
+		   </ul>
+	    </div>
+	    <div class="clear"></div>
+	    <script type="text/javascript">
+	        $(document).ready(function () {
+
+	            var defaults = {
+	                containerID: 'toTop', // fading element id
+	                containerHoverID: 'toTopHover', // fading element hover id
+	                scrollSpeed: 1200,
+	                easingType: 'linear'
+	            };
+
+
+	            $().UItoTop({ easingType: 'easeOutQuart' });
+
+	        });
+		</script>
+	  </div>
+	</div>
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/jquery.nav.js"></script>
+	<script>
+	    $(document).ready(function () {
+	        $('#nav').onePageNav({
+	            begin: function () {
+	                console.log('start')
+	            },
+	            end: function () {
+	                console.log('stop')
+	            }
+	        });
+	    });
+	</script>
+</div>
+    
+</body>
+</html>
